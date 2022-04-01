@@ -176,7 +176,7 @@ def main():
         if ckpt is None:
             print("Warning: --load_ckpt is not specified. Will load Hugginface pre-trained checkpoint.")
             ckpt = 'none'
-
+    print("starting evaluation...")
     # test
     precision, recall, f1, fp, fn, within, outer = framework.eval(model, opt.test_iter, ckpt=ckpt)
     print("RESULT: precision: %.4f, recall: %.4f, f1:%.4f" % (precision, recall, f1))

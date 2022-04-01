@@ -1,0 +1,42 @@
+# training
+
+python3 train_demo.py  --mode inter \
+--lr 1e-4 --batch_size 8 --trainN 5 --N 5 --K 1 --Q 1 \
+--train_iter 10000 --val_iter 500 --test_iter 5000 --val_step 1000 \
+--max_length 64 --model structshot --tau 0.32
+
+# testing
+
+python3 train_demo.py  --mode inter \
+--lr 1e-4 --batch_size 8 --trainN 5 --N 5 --K 1 --Q 1 \
+--train_iter 10000 --val_iter 500 --test_iter 10 --val_step 1000 \
+--max_length 64 --model structshot --tau 0.32 --only_test --load_ckpt checkpoint/structshot-inter-5-1-seed0.pth.tar
+
+
+#testing intra
+python3 train_demo.py  --mode intra \
+--lr 1e-4 --batch_size 8 --trainN 5 --N 5 --K 1 --Q 1 \
+--train_iter 10000 --val_iter 500 --test_iter 10 --val_step 1000 \
+--max_length 64 --model structshot --tau 0.32 --only_test --load_ckpt checkpoint/structshot-intra-5-1-seed0.pth.tar
+
+# proto bert
+# testing inter
+python3 train_demo.py  --mode inter \
+--lr 1e-4 --batch_size 1 --trainN 10 --N 10 --K 5 --Q 1 \
+--train_iter 10000 --val_iter 500 --test_iter 10 --val_step 1000 \
+--max_length 32 --model structshot --tau 0.434 --only_test --load_ckpt checkpoint/structshot-inter-10-5-seed0.pth.tar
+
+
+# intra
+python3 train_demo.py  --mode intra \
+--lr 1e-4 --batch_size 1 --trainN 10 --N 10 --K 5 --Q 1 \
+--train_iter 10000 --val_iter 500 --test_iter 10 --val_step 1000 \
+--max_length 32 --model structshot --tau 0.434 --only_test --load_ckpt checkpoint/structshot-intra-10-5-seed0.pth.tar
+
+
+
+#training
+python3 train_demo.py  --mode inter \
+--lr 1e-4 --batch_size 8 --trainN 5 --N 5 --K 1 --Q 1 \
+--train_iter 5000 --val_iter 50 --test_iter 50 --val_step 50 \
+--max_length 64 --model proto --tau 0.32 --load_ckpt checkpoint/proto-inter-5-1-seed0.pth.tar

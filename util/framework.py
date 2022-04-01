@@ -447,6 +447,8 @@ class FewShotNERFramework:
                 if (it + 1)  == train_iter:
                     break
                 it += 1
+            if it%1000==0:
+                torch.save({'state_dict': model.state_dict()}, save_ckpt.replace('.pth', '_'+str(it)+'.pth'))
                 
         print("\n####################\n")
         print("Finish training " + model_name)
@@ -525,6 +527,7 @@ class FewShotNERFramework:
         with torch.no_grad():
             it = 0
             while it + 1 < eval_iter:
+                print(it)
                 for _, (support, query) in enumerate(eval_dataset):
                     label = torch.cat(query['label'], 0)
                     if torch.cuda.is_available():
@@ -539,6 +542,7 @@ class FewShotNERFramework:
 
                     tmp_pred_cnt, tmp_label_cnt, correct = model.metrics_by_entity(pred, label)
                     fp, fn, token_cnt, within, outer, total_span = model.error_analysis(pred, label, query)
+                    print(fp, fn, token_cnt, within, outer, total_span)
                     pred_cnt += tmp_pred_cnt
                     label_cnt += tmp_label_cnt
                     correct_cnt += correct

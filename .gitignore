@@ -4,6 +4,7 @@
 .vscode
 *.log
 checkpoint/
+checkpoint_1/
 apex
 *.slurm
 *deprecated.py

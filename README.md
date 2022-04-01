@@ -1,33 +1,13 @@
 
+# Deep learning approaches for few-shot Named Entity Recognition
 
-# Few-NERD: Not Only a Few-shot NER Dataset
+This repo contains experimental source code for project titled "Exploring Deep learning approaches for few-shot Named Entity Recognition" being pursued as part of Deep learning course at IIT Hyderabad. 
 
-![](https://img.shields.io/github/last-commit/thunlp/Few-NERD?color=green) ![](https://img.shields.io/badge/contributions-welcome-red) ![](https://img.shields.io/github/issues/thunlp/Few-NERD?color=yellow) 
-
-
-This is the source code of the ACL-IJCNLP 2021 paper:  [**Few-NERD: A Few-shot Named Entity Recognition Dataset**](https://arxiv.org/abs/2105.07464). Check out the [website](https://ningding97.github.io/fewnerd/) of Few-NERD. 
-
-
-
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* **Updates** \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
-
-- 09/03/2022: We have added the training script for supervised training using BERT tagger. Run `bash data/download.sh supervised` to download the data, and then run `bash run_supervised.sh`.
-
-- 01/09/2021: We have modified the results of the supervised setting of Few-NERD in arxiv, thanks for the help of [PedroMLF](https://github.com/PedroMLF).
-
-- 19/08/2021: **Important💥** In accompany with the released episode data, we have updated the training script. Simply add `--use_sampled_data` when running `train_demo.py` to train and test on the released episode data.
-
-- 02/06/2021: To simplify training, we have released the data sampled by episode. click [here](https://cloud.tsinghua.edu.cn/f/0e38bd108d7b49808cc4/?dl=1) to download. The files are named such: `{train/dev/test}_{N}_{K}.jsonl`. We sampled 20000, 1000, 5000 episodes for train, dev, test, respectively.
-
-- 26/05/2021: The current Few-NERD (SUP) is sentence-level. We will soon release  Few-NERD (SUP) 1.1, which is paragraph-level and contains more contextual information.
-
-- 11/06/2021: We have modified the word tokenization and we will soon update the latest results. We sincerely thank [tingtingma](https://github.com/mtt1998) and [Chandan Akiti](https://github.com/chandan047)
-
-
+We have borrowed Few-NERD dataset and baseline systems for further experimentation. All credits go to [**Few-NERD: A Few-shot Named Entity Recognition Dataset**](https://arxiv.org/abs/2105.07464). Check out the [website](https://ningding97.github.io/fewnerd/) of Few-NERD. 
+## Few-NERD: Not Only a Few-shot NER Dataset
 
 ## Contents
 
-- [Website](https://ningding97.github.io/fewnerd/)
 - [Overview](#overview)
 - [Getting Started](#requirements)
   - [Requirements](#requirements)
@@ -38,8 +18,6 @@ This is the source code of the ACL-IJCNLP 2021 paper:  [**Few-NERD: A Few-shot N
   - [Key Implementations](#Key-Implementations)
     - [N way K~2K shot Sampler](#Sampler)
   - [How to Run](#How-to-Run)
-- [Citation](#Citation)
-- [Connection](#Connection)
 
 ## Overview
 
@@ -225,9 +203,7 @@ python3 train_demo.py  --mode inter \
 
 
 
-## Citation
-
-If you use Few-NERD in your work, please cite our paper:
+## References
 
 ```bibtex
 @inproceedings{ding2021few,
@@ -244,9 +220,3 @@ Few-NERD dataset is distributed under the CC BY-SA 4.0 license. The code is dist
 
 
 ## Connection
-
-If you have any questions, feel free to contact
-
-- [dingn18@mails.tsinghua.edu.cn;](mailto:dingn18@mails.tsinghua.edu.cn)
-- [yl-chen21@mails.tsinghua.edu.cn;](mailto:yl-chen21@mails.tsinghua.edu.cn)
-
