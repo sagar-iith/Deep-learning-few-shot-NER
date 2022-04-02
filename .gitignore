@@ -3,7 +3,7 @@
 **/__pycache__
 .vscode
 *.log
-checkpoint/
+# checkpoint/
 checkpoint_1/
 apex
 *.slurm
